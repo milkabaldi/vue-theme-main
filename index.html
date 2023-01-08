@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/theme.css">
     <link rel="shortcut icon" href="/vue-logo.png" type="image/png">
-    <title>Vue</title>
+    <title>Vue counter</title>
 </head>
 <body>
     <!--!! Счетчик -->
@@ -13,8 +13,8 @@
     <div class="card center">
         <h1>{{title}}: {{counter}}</h1>
         <div class="">
-            <button class="btn primary" v-on:click="counter++">Больше</button>
-            <button class="btn danger" v-on:click="counter--">Меньше</button>
+            <button class="btn primary" v-on:click="counter++">More</button>
+            <button class="btn danger" v-on:click="counter--">Less</button>
         </div>
     </div>
 </div><!--!! Счетчики -->
@@ -25,12 +25,12 @@
         <div class="form-control">
             <input type="text" v-bind:placeholder="myPlaceholder" v-bind:value="inputValue" v-on:keypress.enter="addNewNotes" v-on:input="inputChangeHandler"/>
         </div>
-        <button class="btn" v-on:click="addNewNotes">Добавить</button>
+        <button class="btn" v-on:click="addNewNotes">Add</button>
         <hr />
         <ul class="list" v-if="notes.length !== 0">
             <li class="list-item" v-for="(myNote, idx) in notes">
                 ({{idx + 1}})  {{myNote}} 
-                <button class="btn danger" v-on:click="removeNote(idx)">Удалить</button>
+                <button class="btn danger" v-on:click="removeNote(idx)">Delete</button>
             </li>
         </ul>
         <div class="" v-else>Not Found</div>
